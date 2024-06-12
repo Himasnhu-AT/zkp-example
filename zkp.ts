@@ -35,7 +35,7 @@ class Verifier {
 }
 
 const myColor: BallColor = 'Blue'; // Prover's color
-const testColor: BallColor = 'Blue'; // Color to verify against
+const testColor: BallColor = 'Red'; 
 
 const prover = new Prover(myColor);
 const magicBox = new MagicBox(testColor);
