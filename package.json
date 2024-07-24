@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "setup": "openssl genpkey -algorithm RSA -out private.key && openssl rsa -pubout -in private.key -out public.ke",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "npm run build && npm run start",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/node": "^20.14.12",
+    "jest": "^29.7.0",
+    "jsonwebtoken": "^9.0.2",
+    "ts-jest": "^29.2.3"
+  }
+}
