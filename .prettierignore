@@ -1,7 +1,8 @@
 # NodeJS
-build
 node_modules
+build
 coverage
+.husky
 
 # Editor
 .vscode
@@ -9,5 +10,5 @@ coverage
 # System
 .DS_Store
 
-# Never commit keys to Git!
-keys
+# Misc
+LICENSE

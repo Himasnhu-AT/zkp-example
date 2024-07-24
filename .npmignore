@@ -1,5 +1,6 @@
-# NodeJS
-build
+# Source files
+src
+
 node_modules
 coverage
 
@@ -9,5 +10,5 @@ coverage
 # System
 .DS_Store
 
-# Never commit keys to Git!
+# Never reveal your keys!
 keys

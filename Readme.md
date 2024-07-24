@@ -1,10 +1,26 @@
-# Zero Knowledge Proof impl
+# Mina zkApp: Sample
 
-Zero Knowledge proof basically operates on validating information without revealing secrets. For example: verifying age without revealing DOB of recipient.
+This template uses TypeScript.
 
-## implementation:
+## How to build
 
-- zkp.ts: Basic example of `zkp`, to verify color of a ball.
-- aadharExample.ts: verifying age without revelaing DOB of user.
+```sh
+npm run build
+```
 
+## How to run tests
 
+```sh
+npm run test
+npm run testw # watch mode
+```
+
+## How to run coverage
+
+```sh
+npm run coverage
+```
+
+## License
+
+[Apache-2.0](LICENSE)
