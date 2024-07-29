@@ -9,3 +9,13 @@ export const sampleAadharDetails: AadhaarDetails = {
   age: 30,
   dob: "1994-07-25",
 };
+
+export const wrongAadharDetails: AadhaarDetails = {
+  name: " Doe",
+  address: "1234 Main St, Anytown, State, Country",
+  phoneNo: "9876543210",
+  email: "john.doe@example.com",
+  fingerprints: "sampleFingerprintData",
+  age: 30,
+  dob: "1994-07-25",
+};

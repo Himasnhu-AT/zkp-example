@@ -1,5 +1,15 @@
-import { signAadhaarDetails, verifyAadhaarDetails } from "./zkp";
-import { sampleAadharDetails } from "./sample";
+// index.ts
+import { generateProof, verifyProof } from "./zkp";
+import { sampleAadharDetails, wrongAadharDetails } from "./sample";
 
-const token = signAadhaarDetails(sampleAadharDetails)
-console.log(verifyAadhaarDetails(token, sampleAadharDetails))
+// (async () => {
+//   const proof = await generateProof(sampleAadharDetails);
+//   const isValid = verifyProof(sampleAadharDetails, proof);
+//   console.log("Proof is valid:", isValid);
+// })();
+
+// (async () => {
+//   const proof = await generateProof(sampleAadharDetails);
+//   const isValid = verifyProof(wrongAadharDetails, proof);
+//   console.log("Proof is valid:", isValid);
+// })();

@@ -1,33 +1,23 @@
-import { signAadhaarDetails, verifyAadhaarDetails } from "./zkp";
-import { AadhaarDetails } from "./aadhar.types";
-import { sampleAadharDetails } from "./sample";
+import { generateProof, verifyProof } from "./zkp";
+import { sampleAadharDetails, wrongAadharDetails } from "./sample";
+import { before } from "node:test";
 
-describe("AadhaarVerification", () => {
-  let token: string;
+// (async () => {
+//   const proof = await generateProof(sampleAadharDetails);
+//   const isValid = verifyProof(sampleAadharDetails, proof);
+//   console.log("Proof is valid:", isValid);
+// })();
 
-  beforeAll(() => {
-    token = signAadhaarDetails(sampleAadharDetails);
+describe("Aadhar Verification", () => {
+  it("should return true for valid aadhar details", async () => {
+    const proof = await generateProof(sampleAadharDetails);
+    const isValid = verifyProof(sampleAadharDetails, proof);
+    expect(isValid).toBe(true);
   });
 
-  test("should verify the token and return true if it's correct", () => {
-    const verified = verifyAadhaarDetails(token, sampleAadharDetails);
-    expect(verified).toBe(true);
-  });
-
-  test("should fail verification with an invalid token", () => {
-    const verified = verifyAadhaarDetails("invalid-token", sampleAadharDetails);
-    expect(verified).toBe(false);
-  });
-
-  test("should return true if its correct", () => {
-    const verified = verifyAadhaarDetails(token, sampleAadharDetails);
-    expect(verified).toBe(true);
-  });
-
-  test("should return false if its incorrect", () => {
-    const wrongData: AadhaarDetails = sampleAadharDetails;
-    wrongData.email = "";
-    const verified = verifyAadhaarDetails(token, wrongData);
-    expect(verified).toBe(false);
+  it("should return false for invalid aadhar details", async () => {
+    const proof = await generateProof(sampleAadharDetails);
+    const isValid = verifyProof(wrongAadharDetails, proof);
+    expect(isValid).toBe(false);
   });
 });
